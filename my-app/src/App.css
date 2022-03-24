@@ -1,0 +1,71 @@
+.add-movie-container {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+ul {
+  list-style-type: none;
+}
+li {
+  display: inline-block;
+  margin-left: 20px;
+  font-size: 18px;
+}
+a {
+  text-decoration: none;
+  color: #007dc6;
+  font-weight: bold;
+}
+.movie-details {
+  display: flex;
+  flex-direction: row;
+}
+
+.movie-poster {
+  object-fit: cover;
+  height: 500px;
+  width: 340px;
+  margin-top: 12px;
+}
+
+.movie-box {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.movie-container {
+  width: 340px;
+}
+.movie-name,
+.movie-rating,
+.movie-year {
+  font-size: 18px;
+  font-weight: bold;
+  color: #007dc6;
+}
+.movie-summary {
+  margin-top: 0px;
+  font-size: 15px;
+}
+hr{
+  margin:0px;
+}
+.trailor-container{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  color :red;
+  font-family: 'Satisfy';
+  font-size:.85rem;
+  background:black;
+}
+.colorList { color:white}
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;500;700&family=Satisfy&display=swap');
