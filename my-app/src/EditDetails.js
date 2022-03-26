@@ -17,7 +17,8 @@ export function EditDetails({ movieDetails, updateMovieDetails }) {
       method: "GET",
     }).then((response) => {
       response.json().then((mv) => {
-        editData({ items: mv.items });
+        console.log("QWEQWE", mv);
+        editData({ items: mv });
         console.log("Edited Items: " + JSON.stringify(mv.items));
       });
     });
