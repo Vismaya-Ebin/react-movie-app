@@ -3,6 +3,7 @@ import Button from "@mui/material/Button";
 import { useEffect, useState } from "react";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import "../App.css";
+import {API} from "../components/global";
 export default function GetTrailorDetails() {
   const { id } = useParams();
   console.log("MOVIE ID: " + id);
@@ -17,7 +18,7 @@ export default function GetTrailorDetails() {
   console.log(movieDetail);
 
   const getTrailer = () => {
-    fetch("https://61fe505ba58a4e00173c97d5.mockapi.io/movies/" + id, {
+    fetch(`${API}/movies/` + id, {
       method: "GET",
     })
       .then((res) => res.json())

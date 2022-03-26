@@ -6,11 +6,12 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import { useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
+import {API} from "../components/global";
 
 export function ShowMovieDetails() {
   const [movieDetails, updateMovieDetails] = useState([]);
   const getMovies = () => {
-    fetch("https://61fe505ba58a4e00173c97d5.mockapi.io/movies/", {
+    fetch(`${API}/movies/`, {
       method: "GET",
     })
       .then((res) => res.json())
@@ -23,7 +24,7 @@ export function ShowMovieDetails() {
   useEffect(getMovies, []);
 
   const removeItem = (id) => {
-    fetch("https://61fe505ba58a4e00173c97d5.mockapi.io/movies/" +id,{ method: "DELETE",})
+    fetch(`${API}/movies/` +id,{ method: "DELETE",})
       .then((data) => data.json())
        .then(()=> getMovies())
       .then((remData)=>{

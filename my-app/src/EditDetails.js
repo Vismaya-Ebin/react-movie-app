@@ -6,13 +6,14 @@ import { useHistory } from "react-router-dom";
 import { formValidationSchema } from "./components/AddMovies";
 
 import { useFormikContext, Formik, Form, Field, useFormik } from "formik";
+import {API} from "./components/global";
 
 export function EditDetails({ movieDetails, updateMovieDetails }) {
   const { id } = useParams();
   const [data, editData] = useState({ items: "" });
 
   const updateDetails = () => {
-    fetch("https://61fe505ba58a4e00173c97d5.mockapi.io/movies/" + id, {
+    fetch(`${API}/movies/` + id, {
       method: "GET",
     }).then((response) => {
       response.json().then((mv) => {
@@ -48,7 +49,7 @@ function EditMovieForm({ data, editData, id }) {
 
   const updateApiCall = (data) => {
     console.log("AOI DATA",data);
-    fetch("https://61fe505ba58a4e00173c97d5.mockapi.io/movies/" + id, {
+    fetch(`${API}/movies/` + id, {
       method: "PUT",
       body: JSON.stringify(data),
       headers: {

@@ -5,6 +5,7 @@ import TextField from "@mui/material/TextField";
 import * as yup from "yup";
 import { validateYupSchema } from "formik";
 import { useFormik } from "formik";
+import {API} from "../components/global";
 
 export const formValidationSchema = yup.object({
   name: yup.string().required("Please fill name"),
@@ -25,7 +26,7 @@ export function AddMovies() {
   const history = useHistory();
 
   const addData = (data) => {
-    fetch("https://61fe505ba58a4e00173c97d5.mockapi.io/movies/", {
+    fetch(`${API}/movies/`, {
       method: "POST",
       body: JSON.stringify(data),
       headers: { "Content-Type": "application/json" },
