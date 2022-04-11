@@ -30,6 +30,7 @@ export function ShowMovieDetails() {
       .then((remData)=>{
         console.log("DELETED DATA", remData);
       })
+      .catch((err) => console.log(err));
      
       
   };
@@ -40,19 +41,19 @@ export function ShowMovieDetails() {
       <section className="movie-list">
         {movieDetails.map((movie, index) => (
           <ViewMovie
-            key={index}
+            key={movie._id}
             name={movie.name}
             poster={movie.poster}
             releaseYear={movie.releaseYear}
             rating={movie.rating}
             summary={movie.summary}
             index={index}
-            id={movie.id}            
+            id={movie._id}            
             editBtn={
               <Button
                 color="warning"
                 onClick={() => {
-                  history.push("movies/edit/" + movie.id);
+                  history.push("movies/edit/" + movie._id);
                 }}
                 startIcon={<EditIcon />}
               ></Button>
@@ -61,8 +62,8 @@ export function ShowMovieDetails() {
               <Button
                 color="error"
                 onClick={() => {
-                  removeItem(movie.id);
-                  console.log("ID",movie.id);
+                  removeItem(movie._id);
+                  console.log("ID",movie._id);
                   // const remainingMovies = movieDetails.filter((data, idx) => {
                   //   return idx !== index;
                   // });
