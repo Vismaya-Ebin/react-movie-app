@@ -76,11 +76,11 @@ function App() {
             >
               Add Movie
             </Button>
-            <Button  color="inherit" onClick={() => {history.push("/forms")}}>Form</Button>
+          
             <Button
               color="inherit"
               onClick={() => {
-                history.push("/show");
+                history.push("/movies");
               }}
             >
               Show Movie{" "}
@@ -122,7 +122,7 @@ function App() {
               <AddMovies />
             </Route>
 
-            <Route path="/show">
+            <Route path="/movies">
               <ShowMovieDetails />
             </Route>
             <Route path="/forms"><BasicForm/></Route>

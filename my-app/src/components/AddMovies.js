@@ -31,7 +31,7 @@ export function AddMovies() {
       body: JSON.stringify(data),
       headers: { "Content-Type": "application/json" },
     }).then(() => {
-      history.push("/show");
+      history.push("/movies");
     });
   };
  
