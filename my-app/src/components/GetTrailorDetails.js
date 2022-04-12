@@ -23,12 +23,14 @@ export default function GetTrailorDetails() {
     })
       .then((res) => res.json())
       .then((movieDetails) => {
-       updateMovieDetail({items: movieDetails.items });
-        console.log("Inside API", movieDetail);
+        console.log("Inside API", movieDetails);
+       updateMovieDetail({items: movieDetails });
+       
       });
   };
   // similar to ComponentDidMount
   useEffect(getTrailer, []);
+  console.log("Check component got data", movieDetail);
 
   return (
     // <div>Nice</div>

@@ -50,14 +50,14 @@ function EditMovieForm({ data, editData, id }) {
 
   const updateApiCall = (data) => {
     console.log("AOI DATA",data);
-    fetch(`${API}/movies/` + id, {
+    fetch(`${API}/movies/` + data._id, {
       method: "PUT",
       body: JSON.stringify(data),
       headers: {
         "Content-type": "application/json",
       },
     }).then(() => {
-      // history.push("/show");
+      history.push("/movies");
     });
   };
   const { handleSubmit, values, handleChange, handleBlur, touched, errors } =
